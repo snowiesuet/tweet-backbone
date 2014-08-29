@@ -1,0 +1,21 @@
+{
+  "name": "bb-modelv",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "browserify": {
+    "transform": [
+      "hbsfy"
+    ]
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "browserify": "^5.10.1",
+    "handlebars": "^2.0.0-alpha.4",
+    "hbsfy": "^2.1.0"
+  }
+}

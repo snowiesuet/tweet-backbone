@@ -1,0 +1,10 @@
+<div class="profile-avatar">
+	<img class="profile-img" src="{{regSize user.profile_image_url}}"/>
+	<div class="profile-name">{{user.name}}</div>
+	<div class="profile-screen-name">@{{user.screen_name}}</div>
+	<div class="profile-desc">{{user.description}}</div>
+	<p class="profile-location">{{user.location}}</p>
+	{{#each user.entities.url.urls}}
+		<a href="{{expanded_url}}">{{display_url}}</a>
+	{{/each}}
+</div>

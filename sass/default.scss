@@ -1,0 +1,171 @@
+$black: #292F33;
+$grey: #8899a6;
+
+body{
+	font-family: 'Open Sans', sans-serif;
+}
+
+
+.page{
+	margin: 0 auto;
+	padding-left: 10vw;
+	width: 85%;
+}
+
+
+#tweetView{
+	width: 70%;
+	float: right;
+	.tweet-item{
+		&:nth-child(1){
+			border-radius: 5px 0;
+		}
+
+		&:nth-last-child{
+			border-radius: 0 0 5px 5px;
+		}
+
+		background-color: white;
+		border: 1px solid #e1e8ed;
+		color: $black;
+		font-size: 16px;
+		padding: 13px 15px 15px;
+
+		.screen-name{
+			color: $grey;
+			font-size: 13px;
+		}
+
+		.retweet-name{
+			color: $grey;
+			font-size: 12px;
+		}
+
+		a.retweet-name{
+			text-decoration: none;
+		}
+
+		.user-url{
+		color: $black;
+		font-weight: bold;
+		font-size: 14px;
+		text-decoration: none;
+			&:hover{
+				text-decoration: underline;
+			}
+		}
+		.thumb-nail{
+			width: 24px;
+			height: 24px;
+			-webkit-border-radius: 4px;
+			-moz-border-radius: 4px;
+			border-radius: 4px;
+			vertical-align: middle;
+		}
+
+		.count{
+			color: #ccd6dd;
+			font-size: 16px;
+			vertical-align: middle;
+		}
+
+		.tweet-img{
+			margin: 5px 0;
+			img{
+				max-width: 100%;
+				height: 295.375px;
+			}
+		}
+
+	}
+}
+
+#profileView{
+	display: inline-block;
+	width: 25%;
+	float: left;
+	.profile-avatar{
+		img.profile-img{
+			border: 5px solid #fff;
+			border-radius: 12px;
+			box-shadow: 0 1px 1px rgba(136,153,166,0.15);
+			width: 200px;
+			height: 200px;
+		}
+	}
+	.profile-name{
+		font-weight: bold;
+		font-size: 22px;
+	}
+	.profile-screen-name{
+		color: $grey;
+		font-size: 14px;
+	}
+
+}
+
+.sprite{
+	background-image: url(https://si0.twimg.com/images/dev/cms/intents/icons/sprites/everything-spritev2.png);
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	vertical-align: middle;
+	&.retweeted{
+		background-position: 16px 0;
+	}
+	&.favorite{
+		background-position: 64px 0;
+	}
+	&.unfavorite{
+		background-position: 96px 0;
+	}
+	&.retweet{
+		background-position: 47px 0;
+	}
+}
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.clearfix {
+    display: inline-block;
+}
+
+html[xmlns] .clearfix {
+    display: block;
+}
+
+* html .clearfix {
+    height: 1%;
+}
+
+#profileCanopy{
+	display: inline-block;
+	li{
+		list-style: none;
+		display: inline-block;
+		width: 45px;
+		padding: 0 15px;
+	}
+
+	.profileNav-lb{
+		color: #66757f;
+		font-size: 11px;
+		letter-spacing: .02em;
+		text-transform: uppercase;
+	}
+	.profileNav-value{
+		color: #0084B4;
+		font-size: 18px;
+		font-weight: bold;
+		padding-top: 3px;
+	}
+}
+
+

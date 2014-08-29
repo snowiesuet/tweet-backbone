@@ -1,0 +1,46 @@
+
+<div class="tweet-item-wrap">
+	{{#if retweeted_status}}
+		<i class="sprite retweeted"></i><span class="retweet-name"><i>Retweeted by: 
+		<a class="retweet-name" href="http://www.twitter.com/{{user.screen_name}}">{{user.name}}</a></span></i>
+		  {{#with retweeted_status}}
+		  	<div>
+		  		<img class="thumb-nail" src="{{user.profile_image_url}}"></img>
+		  		<a class="user-url" href="http://www.twitter.com/{{user.screen_name}}">{{user.name}}</a>
+		  		<span class="screen-name">@{{user.screen_name}} - {{parseDate created_at}}</span>
+		  	</div>
+		  	<div>{{text}}</div>
+		  {{/with}}
+		  {{#each extended_entities.media}}
+		  	<div class="tweet-img">
+		  		<img class="tweet-img" src="{{media_url}}"></img>
+		  	</div>
+		  {{/each}}
+	{{else}}
+		<img class="thumb-nail" src="{{user.profile_image_url}}"></img>
+		<a class="user-url"  href="http://www.twitter.com/{{user.screen_name}}">{{user.name}}</a>
+		<span class="screen-name"> @{{user.screen_name}} {{parseDate created_at}}</span>
+		<div>{{text}}</div>
+		{{#each extended_entities.media}}
+			<div class="tweet-img">
+				<img src="{{media_url}}"></img>
+			</div>
+		{{/each}}
+	{{/if}}
+	{{#isFavoriteAvailable}}
+
+		<span class="sprite unfavorite"></span>
+		<span class="count">{{favorite_count}}</span>
+	{{else}}
+		<span class="sprite favorite"></span>
+		<span class="count">{{favorite_count}}</span>
+	{{/isFavoriteAvailable}}
+	{{#disabledBtn}}
+		<span class="sprite retweet"></span>
+		<span class="count">{{retweet_count}}</span>
+
+	{{else}}
+		<span class="sprite retweeted"></span>
+		<span class="count">{{retweet_count}}</span>
+	{{/disabledBtn}}
+</div>
