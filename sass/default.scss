@@ -18,10 +18,10 @@ body{
 	float: right;
 	.tweet-item{
 		&:nth-child(1){
-			border-radius: 5px 0;
+			border-radius: 5px 5px 0 0
 		}
 
-		&:nth-last-child{
+		&:nth-last-child(1){
 			border-radius: 0 0 5px 5px;
 		}
 
@@ -102,6 +102,40 @@ body{
 		font-size: 14px;
 	}
 
+	.tweetBox{
+		background-color: #E5F2F7;
+		border-radius: 5px;
+		border: solid 1px #99CDE1;
+		padding: 15px;
+		margin-top: 30px;
+
+		.inputForm{
+			font-size: 14px;
+			width: 100%;
+			height: 3em;
+			border: solid 1px #99CDE1;
+			padding: 0 10px;
+
+
+			&::-webkit-input-placeholder {
+   				color: #8899A6;
+   				font-size: 14px;
+			}
+
+		}
+
+		.tweetBtn{
+			background-color: #0084b4;
+			border: 1px solid transparent;
+			border-radius: 4px;
+			color: white;
+			font-size: 14px;
+			padding: 9px 16px 8px 17px;
+			text-align: center;
+		}
+
+	}
+
 }
 
 .sprite{
@@ -150,8 +184,9 @@ html[xmlns] .clearfix {
 	li{
 		list-style: none;
 		display: inline-block;
-		width: 45px;
+		width: 60px;
 		padding: 0 15px;
+		text-align: center;
 	}
 
 	.profileNav-lb{
@@ -162,6 +197,7 @@ html[xmlns] .clearfix {
 	}
 	.profileNav-value{
 		color: #0084B4;
+		letter-spacing: 0.1em;
 		font-size: 18px;
 		font-weight: bold;
 		padding-top: 3px;

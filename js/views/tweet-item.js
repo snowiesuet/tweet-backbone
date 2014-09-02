@@ -10,8 +10,7 @@
 		isFavoriteAvailable: true,
 		disabledBtn: true,
 		initialize: function(options) {
-
-			this.listenTo(this.model, 'change', this.render);
+				this.listenTo(this.model, 'change', this.render);
 		},
 		events: {
 			"click .favorite": "clickedFavorite2",
@@ -48,8 +47,6 @@
 			this.model.addOne('retweet_count');
 		},
 		render: function() {
-
-
 
 			var options = _.extend({}, this.model.toJSON()); // I'm copying
 			options.isFavoriteAvailable = this.isFavoriteAvailable;

@@ -19,7 +19,7 @@
 	{{else}}
 		<img class="thumb-nail" src="{{user.profile_image_url}}"></img>
 		<a class="user-url"  href="http://www.twitter.com/{{user.screen_name}}">{{user.name}}</a>
-		<span class="screen-name"> @{{user.screen_name}} {{parseDate created_at}}</span>
+		<span class="screen-name"> @{{user.screen_name}} - {{parseDate created_at}}</span>
 		<div>{{text}}</div>
 		{{#each extended_entities.media}}
 			<div class="tweet-img">
@@ -28,7 +28,6 @@
 		{{/each}}
 	{{/if}}
 	{{#isFavoriteAvailable}}
-
 		<span class="sprite unfavorite"></span>
 		<span class="count">{{favorite_count}}</span>
 	{{else}}

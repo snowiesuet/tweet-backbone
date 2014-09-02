@@ -1,12 +1,14 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({"/Users/sleung/projects/snowie-training/bb-modelv/hbs/profile-nav.hbs":[function(require,module,exports){
 // hbsfy compiled Handlebars template
 var HandlebarsCompiler = require('hbsfy/runtime');
-module.exports = HandlebarsCompiler.template({"compiler":[5,">= 2.0.0"],"main":function(depth0,helpers,partials,data) {
-  var stack1, functionType="function", escapeExpression=this.escapeExpression;
-  return "<ul class=\"profileNav-list\">\n	<li class=\"profileNav-item\">\n		<span class=\"profileNav-lb\">Tweets</span>\n		<span class=\"profileNav-value\">18</span>\n	</li>\n	<li class=\"profileNav-item\">\n		<span class=\"profileNav-lb\">Followers</span>\n		<span class=\"profileNav-value\">"
-    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.user)),stack1 == null || stack1 === false ? stack1 : stack1.followers_count)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</span>\n	</li>\n	<li class=\"profileNav-item\">\n		<span class=\"profileNav-lb\">Following</span>\n		<span class=\"profileNav-value\">"
-    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.user)),stack1 == null || stack1 === false ? stack1 : stack1.friends_count)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+module.exports = HandlebarsCompiler.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
+  var stack1, lambda=this.lambda, escapeExpression=this.escapeExpression;
+  return "<ul class=\"profileNav-list\">\n\n	<li class=\"profileNav-item\">\n		<span class=\"profileNav-lb\">Tweets</span>\n		<span class=\"profileNav-value\">"
+    + escapeExpression(lambda(((stack1 = (depth0 != null ? depth0.tweetCol : depth0)) != null ? stack1.length : stack1), depth0))
+    + "</span>\n	</li>\n\n	<li class=\"profileNav-item\">\n		<span class=\"profileNav-lb\">Followers</span>\n\n		<span class=\"profileNav-value\">\n			"
+    + escapeExpression(lambda(((stack1 = ((stack1 = ((stack1 = (depth0 != null ? depth0.tweetCol : depth0)) != null ? stack1['0'] : stack1)) != null ? stack1.user : stack1)) != null ? stack1.followers_count : stack1), depth0))
+    + "\n		</span>\n	</li>\n	<li class=\"profileNav-item\">\n		<span class=\"profileNav-lb\">Following</span>\n		<span class=\"profileNav-value\">	"
+    + escapeExpression(lambda(((stack1 = ((stack1 = ((stack1 = (depth0 != null ? depth0.tweetCol : depth0)) != null ? stack1['0'] : stack1)) != null ? stack1.user : stack1)) != null ? stack1.friends_count : stack1), depth0))
     + "</span>\n	</li>\n</ul>";
 },"useData":true});
 
@@ -14,119 +16,116 @@ module.exports = HandlebarsCompiler.template({"compiler":[5,">= 2.0.0"],"main":f
 // hbsfy compiled Handlebars template
 var HandlebarsCompiler = require('hbsfy/runtime');
 module.exports = HandlebarsCompiler.template({"1":function(depth0,helpers,partials,data) {
-  var helper, functionType="function", escapeExpression=this.escapeExpression;
-  return "\n		<a href=\""
-    + escapeExpression(((helper = helpers.expanded_url || (depth0 && depth0.expanded_url)),(typeof helper === functionType ? helper.call(depth0, {"name":"expanded_url","hash":{},"data":data}) : helper)))
+  var helper, functionType="function", helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
+  return "		<a href=\""
+    + escapeExpression(((helper = (helper = helpers.expanded_url || (depth0 != null ? depth0.expanded_url : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"expanded_url","hash":{},"data":data}) : helper)))
     + "\">"
-    + escapeExpression(((helper = helpers.display_url || (depth0 && depth0.display_url)),(typeof helper === functionType ? helper.call(depth0, {"name":"display_url","hash":{},"data":data}) : helper)))
-    + "</a>\n	";
-},"compiler":[5,">= 2.0.0"],"main":function(depth0,helpers,partials,data) {
-  var stack1, helper, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression, functionType="function", buffer = "<div class=\"profile-avatar\">\n	<img class=\"profile-img\" src=\""
-    + escapeExpression((helper = helpers.regSize || (depth0 && depth0.regSize) || helperMissing,helper.call(depth0, ((stack1 = (depth0 && depth0.user)),stack1 == null || stack1 === false ? stack1 : stack1.profile_image_url), {"name":"regSize","hash":{},"data":data})))
+    + escapeExpression(((helper = (helper = helpers.display_url || (depth0 != null ? depth0.display_url : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"display_url","hash":{},"data":data}) : helper)))
+    + "</a>\n";
+},"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
+  var stack1, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression, lambda=this.lambda, buffer = "<div class=\"profile-avatar\">\n	<img class=\"profile-img\" src=\""
+    + escapeExpression(((helpers.regSize || (depth0 && depth0.regSize) || helperMissing).call(depth0, ((stack1 = (depth0 != null ? depth0.user : depth0)) != null ? stack1.profile_image_url : stack1), {"name":"regSize","hash":{},"data":data})))
     + "\"/>\n	<div class=\"profile-name\">"
-    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.user)),stack1 == null || stack1 === false ? stack1 : stack1.name)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + escapeExpression(lambda(((stack1 = (depth0 != null ? depth0.user : depth0)) != null ? stack1.name : stack1), depth0))
     + "</div>\n	<div class=\"profile-screen-name\">@"
-    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.user)),stack1 == null || stack1 === false ? stack1 : stack1.screen_name)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + escapeExpression(lambda(((stack1 = (depth0 != null ? depth0.user : depth0)) != null ? stack1.screen_name : stack1), depth0))
     + "</div>\n	<div class=\"profile-desc\">"
-    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.user)),stack1 == null || stack1 === false ? stack1 : stack1.description)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + escapeExpression(lambda(((stack1 = (depth0 != null ? depth0.user : depth0)) != null ? stack1.description : stack1), depth0))
     + "</div>\n	<p class=\"profile-location\">"
-    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.user)),stack1 == null || stack1 === false ? stack1 : stack1.location)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</p>\n	";
-  stack1 = helpers.each.call(depth0, ((stack1 = ((stack1 = ((stack1 = (depth0 && depth0.user)),stack1 == null || stack1 === false ? stack1 : stack1.entities)),stack1 == null || stack1 === false ? stack1 : stack1.url)),stack1 == null || stack1 === false ? stack1 : stack1.urls), {"name":"each","hash":{},"fn":this.program(1, data),"inverse":this.noop,"data":data});
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  return buffer + "\n</div>\n";
+    + escapeExpression(lambda(((stack1 = (depth0 != null ? depth0.user : depth0)) != null ? stack1.location : stack1), depth0))
+    + "</p>\n";
+  stack1 = helpers.each.call(depth0, ((stack1 = ((stack1 = ((stack1 = (depth0 != null ? depth0.user : depth0)) != null ? stack1.entities : stack1)) != null ? stack1.url : stack1)) != null ? stack1.urls : stack1), {"name":"each","hash":{},"fn":this.program(1, data),"inverse":this.noop,"data":data});
+  if (stack1 != null) { buffer += stack1; }
+  return buffer + "</div>\n<div class=\"tweetBox\">\n	<input type=\"textarea\" id=\"tweetMsg\" maxlength=\"140\" placeholder=\"Compose new tweet...\" class=\"inputForm\"></input>\n	<button class=\"tweetBtn\" id=\"tweeteh\">Tweet!</button>\n</div>";
 },"useData":true});
 
 },{"hbsfy/runtime":"/Users/sleung/projects/snowie-training/bb-modelv/node_modules/hbsfy/runtime.js"}],"/Users/sleung/projects/snowie-training/bb-modelv/hbs/tweet-template.hbs":[function(require,module,exports){
 // hbsfy compiled Handlebars template
 var HandlebarsCompiler = require('hbsfy/runtime');
 module.exports = HandlebarsCompiler.template({"1":function(depth0,helpers,partials,data) {
-  var stack1, functionType="function", escapeExpression=this.escapeExpression, buffer = "\n		<i class=\"sprite retweeted\"></i><span class=\"retweet-name\"><i>Retweeted by: \n		<a class=\"retweet-name\" href=\"http://www.twitter.com/"
-    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.user)),stack1 == null || stack1 === false ? stack1 : stack1.screen_name)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+  var stack1, lambda=this.lambda, escapeExpression=this.escapeExpression, buffer = "		<i class=\"sprite retweeted\"></i><span class=\"retweet-name\"><i>Retweeted by: \n		<a class=\"retweet-name\" href=\"http://www.twitter.com/"
+    + escapeExpression(lambda(((stack1 = (depth0 != null ? depth0.user : depth0)) != null ? stack1.screen_name : stack1), depth0))
     + "\">"
-    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.user)),stack1 == null || stack1 === false ? stack1 : stack1.name)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</a></span></i>\n		  ";
-  stack1 = helpers['with'].call(depth0, (depth0 && depth0.retweeted_status), {"name":"with","hash":{},"fn":this.program(2, data),"inverse":this.noop,"data":data});
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n		  ";
-  stack1 = helpers.each.call(depth0, ((stack1 = (depth0 && depth0.extended_entities)),stack1 == null || stack1 === false ? stack1 : stack1.media), {"name":"each","hash":{},"fn":this.program(4, data),"inverse":this.noop,"data":data});
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  return buffer + "\n	";
+    + escapeExpression(lambda(((stack1 = (depth0 != null ? depth0.user : depth0)) != null ? stack1.name : stack1), depth0))
+    + "</a></span></i>\n";
+  stack1 = helpers['with'].call(depth0, (depth0 != null ? depth0.retweeted_status : depth0), {"name":"with","hash":{},"fn":this.program(2, data),"inverse":this.noop,"data":data});
+  if (stack1 != null) { buffer += stack1; }
+  stack1 = helpers.each.call(depth0, ((stack1 = (depth0 != null ? depth0.extended_entities : depth0)) != null ? stack1.media : stack1), {"name":"each","hash":{},"fn":this.program(4, data),"inverse":this.noop,"data":data});
+  if (stack1 != null) { buffer += stack1; }
+  return buffer;
 },"2":function(depth0,helpers,partials,data) {
-  var stack1, helper, functionType="function", escapeExpression=this.escapeExpression, helperMissing=helpers.helperMissing;
-  return "\n		  	<div>\n		  		<img class=\"thumb-nail\" src=\""
-    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.user)),stack1 == null || stack1 === false ? stack1 : stack1.profile_image_url)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+  var stack1, helper, lambda=this.lambda, escapeExpression=this.escapeExpression, helperMissing=helpers.helperMissing, functionType="function";
+  return "		  	<div>\n		  		<img class=\"thumb-nail\" src=\""
+    + escapeExpression(lambda(((stack1 = (depth0 != null ? depth0.user : depth0)) != null ? stack1.profile_image_url : stack1), depth0))
     + "\"></img>\n		  		<a class=\"user-url\" href=\"http://www.twitter.com/"
-    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.user)),stack1 == null || stack1 === false ? stack1 : stack1.screen_name)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + escapeExpression(lambda(((stack1 = (depth0 != null ? depth0.user : depth0)) != null ? stack1.screen_name : stack1), depth0))
     + "\">"
-    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.user)),stack1 == null || stack1 === false ? stack1 : stack1.name)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + escapeExpression(lambda(((stack1 = (depth0 != null ? depth0.user : depth0)) != null ? stack1.name : stack1), depth0))
     + "</a>\n		  		<span class=\"screen-name\">@"
-    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.user)),stack1 == null || stack1 === false ? stack1 : stack1.screen_name)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + escapeExpression(lambda(((stack1 = (depth0 != null ? depth0.user : depth0)) != null ? stack1.screen_name : stack1), depth0))
     + " - "
-    + escapeExpression((helper = helpers.parseDate || (depth0 && depth0.parseDate) || helperMissing,helper.call(depth0, (depth0 && depth0.created_at), {"name":"parseDate","hash":{},"data":data})))
+    + escapeExpression(((helpers.parseDate || (depth0 && depth0.parseDate) || helperMissing).call(depth0, (depth0 != null ? depth0.created_at : depth0), {"name":"parseDate","hash":{},"data":data})))
     + "</span>\n		  	</div>\n		  	<div>"
-    + escapeExpression(((helper = helpers.text || (depth0 && depth0.text)),(typeof helper === functionType ? helper.call(depth0, {"name":"text","hash":{},"data":data}) : helper)))
-    + "</div>\n		  ";
+    + escapeExpression(((helper = (helper = helpers.text || (depth0 != null ? depth0.text : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"text","hash":{},"data":data}) : helper)))
+    + "</div>\n";
 },"4":function(depth0,helpers,partials,data) {
-  var helper, functionType="function", escapeExpression=this.escapeExpression;
-  return "\n		  	<div class=\"tweet-img\">\n		  		<img class=\"tweet-img\" src=\""
-    + escapeExpression(((helper = helpers.media_url || (depth0 && depth0.media_url)),(typeof helper === functionType ? helper.call(depth0, {"name":"media_url","hash":{},"data":data}) : helper)))
-    + "\"></img>\n		  	</div>\n		  ";
+  var helper, functionType="function", helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
+  return "		  	<div class=\"tweet-img\">\n		  		<img class=\"tweet-img\" src=\""
+    + escapeExpression(((helper = (helper = helpers.media_url || (depth0 != null ? depth0.media_url : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"media_url","hash":{},"data":data}) : helper)))
+    + "\"></img>\n		  	</div>\n";
 },"6":function(depth0,helpers,partials,data) {
-  var stack1, helper, functionType="function", escapeExpression=this.escapeExpression, helperMissing=helpers.helperMissing, buffer = "\n		<img class=\"thumb-nail\" src=\""
-    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.user)),stack1 == null || stack1 === false ? stack1 : stack1.profile_image_url)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+  var stack1, helper, lambda=this.lambda, escapeExpression=this.escapeExpression, helperMissing=helpers.helperMissing, functionType="function", buffer = "		<img class=\"thumb-nail\" src=\""
+    + escapeExpression(lambda(((stack1 = (depth0 != null ? depth0.user : depth0)) != null ? stack1.profile_image_url : stack1), depth0))
     + "\"></img>\n		<a class=\"user-url\"  href=\"http://www.twitter.com/"
-    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.user)),stack1 == null || stack1 === false ? stack1 : stack1.screen_name)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + escapeExpression(lambda(((stack1 = (depth0 != null ? depth0.user : depth0)) != null ? stack1.screen_name : stack1), depth0))
     + "\">"
-    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.user)),stack1 == null || stack1 === false ? stack1 : stack1.name)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + escapeExpression(lambda(((stack1 = (depth0 != null ? depth0.user : depth0)) != null ? stack1.name : stack1), depth0))
     + "</a>\n		<span class=\"screen-name\"> @"
-    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.user)),stack1 == null || stack1 === false ? stack1 : stack1.screen_name)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + " "
-    + escapeExpression((helper = helpers.parseDate || (depth0 && depth0.parseDate) || helperMissing,helper.call(depth0, (depth0 && depth0.created_at), {"name":"parseDate","hash":{},"data":data})))
+    + escapeExpression(lambda(((stack1 = (depth0 != null ? depth0.user : depth0)) != null ? stack1.screen_name : stack1), depth0))
+    + " - "
+    + escapeExpression(((helpers.parseDate || (depth0 && depth0.parseDate) || helperMissing).call(depth0, (depth0 != null ? depth0.created_at : depth0), {"name":"parseDate","hash":{},"data":data})))
     + "</span>\n		<div>"
-    + escapeExpression(((helper = helpers.text || (depth0 && depth0.text)),(typeof helper === functionType ? helper.call(depth0, {"name":"text","hash":{},"data":data}) : helper)))
-    + "</div>\n		";
-  stack1 = helpers.each.call(depth0, ((stack1 = (depth0 && depth0.extended_entities)),stack1 == null || stack1 === false ? stack1 : stack1.media), {"name":"each","hash":{},"fn":this.program(7, data),"inverse":this.noop,"data":data});
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  return buffer + "\n	";
+    + escapeExpression(((helper = (helper = helpers.text || (depth0 != null ? depth0.text : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"text","hash":{},"data":data}) : helper)))
+    + "</div>\n";
+  stack1 = helpers.each.call(depth0, ((stack1 = (depth0 != null ? depth0.extended_entities : depth0)) != null ? stack1.media : stack1), {"name":"each","hash":{},"fn":this.program(7, data),"inverse":this.noop,"data":data});
+  if (stack1 != null) { buffer += stack1; }
+  return buffer;
 },"7":function(depth0,helpers,partials,data) {
-  var helper, functionType="function", escapeExpression=this.escapeExpression;
-  return "\n			<div class=\"tweet-img\">\n				<img src=\""
-    + escapeExpression(((helper = helpers.media_url || (depth0 && depth0.media_url)),(typeof helper === functionType ? helper.call(depth0, {"name":"media_url","hash":{},"data":data}) : helper)))
-    + "\"></img>\n			</div>\n		";
+  var helper, functionType="function", helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
+  return "			<div class=\"tweet-img\">\n				<img src=\""
+    + escapeExpression(((helper = (helper = helpers.media_url || (depth0 != null ? depth0.media_url : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"media_url","hash":{},"data":data}) : helper)))
+    + "\"></img>\n			</div>\n";
 },"9":function(depth0,helpers,partials,data) {
-  var helper, functionType="function", escapeExpression=this.escapeExpression;
-  return "\n\n		<span class=\"sprite unfavorite\"></span>\n		<span class=\"count\">"
-    + escapeExpression(((helper = helpers.favorite_count || (depth0 && depth0.favorite_count)),(typeof helper === functionType ? helper.call(depth0, {"name":"favorite_count","hash":{},"data":data}) : helper)))
-    + "</span>\n	";
+  var helper, functionType="function", helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
+  return "		<span class=\"sprite unfavorite\"></span>\n		<span class=\"count\">"
+    + escapeExpression(((helper = (helper = helpers.favorite_count || (depth0 != null ? depth0.favorite_count : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"favorite_count","hash":{},"data":data}) : helper)))
+    + "</span>\n";
 },"11":function(depth0,helpers,partials,data) {
-  var helper, functionType="function", escapeExpression=this.escapeExpression;
-  return "\n		<span class=\"sprite favorite\"></span>\n		<span class=\"count\">"
-    + escapeExpression(((helper = helpers.favorite_count || (depth0 && depth0.favorite_count)),(typeof helper === functionType ? helper.call(depth0, {"name":"favorite_count","hash":{},"data":data}) : helper)))
-    + "</span>\n	";
+  var helper, functionType="function", helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
+  return "		<span class=\"sprite favorite\"></span>\n		<span class=\"count\">"
+    + escapeExpression(((helper = (helper = helpers.favorite_count || (depth0 != null ? depth0.favorite_count : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"favorite_count","hash":{},"data":data}) : helper)))
+    + "</span>\n";
 },"13":function(depth0,helpers,partials,data) {
-  var helper, functionType="function", escapeExpression=this.escapeExpression;
-  return "\n		<span class=\"sprite retweet\"></span>\n		<span class=\"count\">"
-    + escapeExpression(((helper = helpers.retweet_count || (depth0 && depth0.retweet_count)),(typeof helper === functionType ? helper.call(depth0, {"name":"retweet_count","hash":{},"data":data}) : helper)))
-    + "</span>\n\n	";
+  var helper, functionType="function", helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
+  return "		<span class=\"sprite retweet\"></span>\n		<span class=\"count\">"
+    + escapeExpression(((helper = (helper = helpers.retweet_count || (depth0 != null ? depth0.retweet_count : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"retweet_count","hash":{},"data":data}) : helper)))
+    + "</span>\n\n";
 },"15":function(depth0,helpers,partials,data) {
-  var helper, functionType="function", escapeExpression=this.escapeExpression;
-  return "\n		<span class=\"sprite retweeted\"></span>\n		<span class=\"count\">"
-    + escapeExpression(((helper = helpers.retweet_count || (depth0 && depth0.retweet_count)),(typeof helper === functionType ? helper.call(depth0, {"name":"retweet_count","hash":{},"data":data}) : helper)))
-    + "</span>\n	";
-},"compiler":[5,">= 2.0.0"],"main":function(depth0,helpers,partials,data) {
-  var stack1, helper, options, functionType="function", blockHelperMissing=helpers.blockHelperMissing, buffer = "\n<div class=\"tweet-item-wrap\">\n	";
-  stack1 = helpers['if'].call(depth0, (depth0 && depth0.retweeted_status), {"name":"if","hash":{},"fn":this.program(1, data),"inverse":this.program(6, data),"data":data});
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n	";
-  stack1 = ((helper = helpers.isFavoriteAvailable || (depth0 && depth0.isFavoriteAvailable)),(options={"name":"isFavoriteAvailable","hash":{},"fn":this.program(9, data),"inverse":this.program(11, data),"data":data}),(typeof helper === functionType ? helper.call(depth0, options) : helper));
+  var helper, functionType="function", helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
+  return "		<span class=\"sprite retweeted\"></span>\n		<span class=\"count\">"
+    + escapeExpression(((helper = (helper = helpers.retweet_count || (depth0 != null ? depth0.retweet_count : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"retweet_count","hash":{},"data":data}) : helper)))
+    + "</span>\n";
+},"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
+  var stack1, helper, options, functionType="function", helperMissing=helpers.helperMissing, blockHelperMissing=helpers.blockHelperMissing, buffer = "\n<div class=\"tweet-item-wrap\">\n";
+  stack1 = helpers['if'].call(depth0, (depth0 != null ? depth0.retweeted_status : depth0), {"name":"if","hash":{},"fn":this.program(1, data),"inverse":this.program(6, data),"data":data});
+  if (stack1 != null) { buffer += stack1; }
+  stack1 = ((helper = (helper = helpers.isFavoriteAvailable || (depth0 != null ? depth0.isFavoriteAvailable : depth0)) != null ? helper : helperMissing),(options={"name":"isFavoriteAvailable","hash":{},"fn":this.program(9, data),"inverse":this.program(11, data),"data":data}),(typeof helper === functionType ? helper.call(depth0, options) : helper));
   if (!helpers.isFavoriteAvailable) { stack1 = blockHelperMissing.call(depth0, stack1, options); }
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n	";
-  stack1 = ((helper = helpers.disabledBtn || (depth0 && depth0.disabledBtn)),(options={"name":"disabledBtn","hash":{},"fn":this.program(13, data),"inverse":this.program(15, data),"data":data}),(typeof helper === functionType ? helper.call(depth0, options) : helper));
+  if (stack1 != null) { buffer += stack1; }
+  stack1 = ((helper = (helper = helpers.disabledBtn || (depth0 != null ? depth0.disabledBtn : depth0)) != null ? helper : helperMissing),(options={"name":"disabledBtn","hash":{},"fn":this.program(13, data),"inverse":this.program(15, data),"data":data}),(typeof helper === functionType ? helper.call(depth0, options) : helper));
   if (!helpers.disabledBtn) { stack1 = blockHelperMissing.call(depth0, stack1, options); }
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  return buffer + "\n</div>";
+  if (stack1 != null) { buffer += stack1; }
+  return buffer + "</div>";
 },"useData":true});
 
 },{"hbsfy/runtime":"/Users/sleung/projects/snowie-training/bb-modelv/node_modules/hbsfy/runtime.js"}],"/Users/sleung/projects/snowie-training/bb-modelv/index.js":[function(require,module,exports){
@@ -183,23 +182,62 @@ exports.Model = Backbone.Model.extend({
 	},
 	subOne: function(value) {
 		this.set(value, this.get(value) - 1);
+	},
+	defaults:{
+		"text": "Test text",
+		"id": 600828399837794304,
+		"user": {
+		"name": "Grumpy Cat",
+		"screen_name": "RealGrumpyCat",
+		"location": "Arizona",
+		"description": "The Official Twitter for Grumpy Cat. The World's grumpiest cat! #NO",
+		"url": "http:\/\/t.co\/khV3bNozHB",
+		"entities": {
+			"url": {
+				"urls": [{
+					"url": "http:\/\/t.co\/khV3bNozHB",
+					"expanded_url": "http:\/\/www.grumpycats.com",
+					"display_url": "grumpycats.com",
+					"indices": [0, 22]
+				}]
+			},
+			"description": {
+				"urls": []
+			}
+		},
+		"profile_image_url": "http:\/\/pbs.twimg.com\/profile_images\/488794124590395392\/rsBvWfUr_normal.jpeg",
+		"followers_count": 232077,
+		"friends_count": 29856
 	}
+}
 });
 
 exports.Collection = Backbone.Collection.extend({
-  model : exports.Model
+  model : exports.Model,
+  comparator: function(m1, m2){
+  	console.log('comparing');
+  	return new Date(m2.get('created_at')).getTime() - new Date(m1.get('created_at')).getTime();
+  }
 });
 },{}],"/Users/sleung/projects/snowie-training/bb-modelv/js/views/profile-nav.js":[function(require,module,exports){
 var Handlebars = require("hbsfy/runtime");
 
 var profileNav = window.template = require('../../hbs/profile-nav.hbs');
 
+
+//handlebars way to retrieve the length
+Handlebars.registerHelper('tweetLength', function(collection) {
+	return collection.length;
+});
+
 module.exports = Backbone.View.extend({
-	 initialize: function() {
-        this.render();
+	initialize: function() {
+        this.listenTo(this.collection, 'change', this.render);
     },
 	render: function() {
-		this.$el.html(profileNav(this.collection.models[0].toJSON()));
+		this.$el.html(profileNav({tweetCol: this.collection.toJSON()}));
+		//console.log(this.collection.first().toJSON().user.followers_count);
+		//this.$el.html(profileNav(this.collection.models[0].toJSON()));
 	}
 });
 },{"../../hbs/profile-nav.hbs":"/Users/sleung/projects/snowie-training/bb-modelv/hbs/profile-nav.hbs","hbsfy/runtime":"/Users/sleung/projects/snowie-training/bb-modelv/node_modules/hbsfy/runtime.js"}],"/Users/sleung/projects/snowie-training/bb-modelv/js/views/profile.js":[function(require,module,exports){
@@ -213,9 +251,28 @@ Handlebars.registerHelper('regSize', function(normalSize) {
 
 
 module.exports = Backbone.View.extend({
-	 initialize: function() {
-        this.render();
-    },
+	tweetCount: 0,
+	initialize: function() {
+		this.render();
+	},
+	events: {
+		"click #tweeteh": "tweetehed",
+	},
+	addTweetCount: function(){
+		return --this.tweetCount;
+	},
+	tweetehed: function(evt) {
+		console.log('adding new tweet model');
+		_this = this.model;
+		var newTweetModel = new TweetModel({
+			text: this.$("input#tweetMsg").val(),
+			id: this.addTweetCount(),
+			created_at: new Date()
+		});
+		$("input#tweetMsg").val(""),
+		this.collection.add(newTweetModel);
+		this.collection.trigger('change');
+	},
 	render: function() {
 		this.$el.html(profileTemplate(this.collection.models[0].toJSON()));
 	}
@@ -233,8 +290,7 @@ module.exports = Backbone.View.extend({
 		isFavoriteAvailable: true,
 		disabledBtn: true,
 		initialize: function(options) {
-
-			this.listenTo(this.model, 'change', this.render);
+				this.listenTo(this.model, 'change', this.render);
 		},
 		events: {
 			"click .favorite": "clickedFavorite2",
@@ -272,8 +328,6 @@ module.exports = Backbone.View.extend({
 		},
 		render: function() {
 
-
-
 			var options = _.extend({}, this.model.toJSON()); // I'm copying
 			options.isFavoriteAvailable = this.isFavoriteAvailable;
 			options.disabledBtn = this.disabledBtn;
@@ -289,9 +343,15 @@ module.exports = Backbone.View.extend({
 var TweetItem = require('./tweet-item');
 
 module.exports = Backbone.View.extend({
+	initialize: function() {
+        this.listenTo(this.collection, 'add refresh', this.render);
+    },
+
 	render: function() {
 		var output = [];
 		var _this = this;
+		_this.$el.empty();
+		//var sorted = this.collection.sortBy('created_at');
 		this.collection.forEach(function(model) {
 			_this.$el.append('<div class="tweet-item"></div>');
 			var el = _this.$el.find('.tweet-item:last');
@@ -325,6 +385,7 @@ var create = function() {
   hb.SafeString = SafeString;
   hb.Exception = Exception;
   hb.Utils = Utils;
+  hb.escapeExpression = Utils.escapeExpression;
 
   hb.VM = runtime;
   hb.template = function(spec) {
@@ -337,21 +398,24 @@ var create = function() {
 var Handlebars = create();
 Handlebars.create = create;
 
+Handlebars['default'] = Handlebars;
+
 exports["default"] = Handlebars;
 },{"./handlebars/base":"/Users/sleung/projects/snowie-training/bb-modelv/node_modules/handlebars/dist/cjs/handlebars/base.js","./handlebars/exception":"/Users/sleung/projects/snowie-training/bb-modelv/node_modules/handlebars/dist/cjs/handlebars/exception.js","./handlebars/runtime":"/Users/sleung/projects/snowie-training/bb-modelv/node_modules/handlebars/dist/cjs/handlebars/runtime.js","./handlebars/safe-string":"/Users/sleung/projects/snowie-training/bb-modelv/node_modules/handlebars/dist/cjs/handlebars/safe-string.js","./handlebars/utils":"/Users/sleung/projects/snowie-training/bb-modelv/node_modules/handlebars/dist/cjs/handlebars/utils.js"}],"/Users/sleung/projects/snowie-training/bb-modelv/node_modules/handlebars/dist/cjs/handlebars/base.js":[function(require,module,exports){
 "use strict";
 var Utils = require("./utils");
 var Exception = require("./exception")["default"];
 
-var VERSION = "2.0.0-alpha.4";
-exports.VERSION = VERSION;var COMPILER_REVISION = 5;
+var VERSION = "2.0.0-beta.1";
+exports.VERSION = VERSION;var COMPILER_REVISION = 6;
 exports.COMPILER_REVISION = COMPILER_REVISION;
 var REVISION_CHANGES = {
   1: '<= 1.0.rc.2', // 1.0.rc.2 is actually rev2 but doesn't report it
   2: '== 1.0.0-rc.3',
   3: '== 1.0.0-rc.4',
   4: '== 1.x.x',
-  5: '>= 2.0.0'
+  5: '== 2.0.0-alpha.x',
+  6: '>= 2.0.0-beta.1'
 };
 exports.REVISION_CHANGES = REVISION_CHANGES;
 var isArray = Utils.isArray,
@@ -372,12 +436,11 @@ exports.HandlebarsEnvironment = HandlebarsEnvironment;HandlebarsEnvironment.prot
   logger: logger,
   log: log,
 
-  registerHelper: function(name, fn, inverse) {
+  registerHelper: function(name, fn) {
     if (toString.call(name) === objectType) {
-      if (inverse || fn) { throw new Exception('Arg not supported with multiple helpers'); }
+      if (fn) { throw new Exception('Arg not supported with multiple helpers'); }
       Utils.extend(this.helpers, name);
     } else {
-      if (inverse) { fn.not = inverse; }
       this.helpers[name] = fn;
     }
   },
@@ -409,9 +472,8 @@ function registerDefaultHelpers(instance) {
   });
 
   instance.registerHelper('blockHelperMissing', function(context, options) {
-    var inverse = options.inverse || function() {}, fn = options.fn;
-
-    if (isFunction(context)) { context = context.call(this); }
+    var inverse = options.inverse,
+        fn = options.fn;
 
     if(context === true) {
       return fn(this);
@@ -439,10 +501,8 @@ function registerDefaultHelpers(instance) {
   });
 
   instance.registerHelper('each', function(context, options) {
-    // Allow for {{#each}}
     if (!options) {
-      options = context;
-      context = this;
+      throw new Exception('Must pass iterator to #each');
     }
 
     var fn = options.fn, inverse = options.inverse;
@@ -529,6 +589,8 @@ function registerDefaultHelpers(instance) {
       }
 
       return fn(context, options);
+    } else {
+      return options.inverse(this);
     }
   });
 
@@ -537,7 +599,7 @@ function registerDefaultHelpers(instance) {
     instance.log(level, context);
   });
 
-  instance.registerHelper('lookup', function(obj, field, options) {
+  instance.registerHelper('lookup', function(obj, field) {
     return obj && obj[field];
   });
 }
@@ -563,9 +625,9 @@ var logger = {
   }
 };
 exports.logger = logger;
-function log(level, obj) { logger.log(level, obj); }
-
-exports.log = log;var createFrame = function(object) {
+var log = logger.log;
+exports.log = log;
+var createFrame = function(object) {
   var frame = Utils.extend({}, object);
   frame._parent = object;
   return frame;
@@ -629,26 +691,43 @@ function checkRevision(compilerInfo) {
 exports.checkRevision = checkRevision;// TODO: Remove this line and break up compilePartial
 
 function template(templateSpec, env) {
+  /* istanbul ignore next */
   if (!env) {
     throw new Exception("No environment passed to template");
+  }
+  if (!templateSpec || !templateSpec.main) {
+    throw new Exception('Unknown template object: ' + typeof templateSpec);
   }
 
   // Note: Using env.VM references rather than local var references throughout this section to allow
   // for external users to override these as psuedo-supported APIs.
   env.VM.checkRevision(templateSpec.compiler);
 
-  var invokePartialWrapper = function(partial, name, context, hash, helpers, partials, data) {
+  var invokePartialWrapper = function(partial, indent, name, context, hash, helpers, partials, data, depths) {
     if (hash) {
       context = Utils.extend({}, context, hash);
     }
 
-    var result = env.VM.invokePartial.call(this, partial, name, context, helpers, partials, data);
-    if (result != null) { return result; }
+    var result = env.VM.invokePartial.call(this, partial, name, context, helpers, partials, data, depths);
 
-    if (env.compile) {
-      var options = { helpers: helpers, partials: partials, data: data };
-      partials[name] = env.compile(partial, { data: data !== undefined }, env);
-      return partials[name](context, options);
+    if (result == null && env.compile) {
+      var options = { helpers: helpers, partials: partials, data: data, depths: depths };
+      partials[name] = env.compile(partial, { data: data !== undefined, compat: templateSpec.compat }, env);
+      result = partials[name](context, options);
+    }
+    if (result != null) {
+      if (indent) {
+        var lines = result.split('\n');
+        for (var i = 0, l = lines.length; i < l; i++) {
+          if (!lines[i] && i + 1 === l) {
+            break;
+          }
+
+          lines[i] = indent + lines[i];
+        }
+        result = lines.join('\n');
+      }
+      return result;
     } else {
       throw new Exception("The partial " + name + " could not be compiled when running in runtime-only mode");
     }
@@ -656,6 +735,18 @@ function template(templateSpec, env) {
 
   // Just add water
   var container = {
+    lookup: function(depths, name) {
+      var len = depths.length;
+      for (var i = 0; i < len; i++) {
+        if (depths[i] && depths[i][name] != null) {
+          return depths[i][name];
+        }
+      }
+    },
+    lambda: function(current, context) {
+      return typeof current === 'function' ? current.call(context) : current;
+    },
+
     escapeExpression: Utils.escapeExpression,
     invokePartial: invokePartialWrapper,
 
@@ -664,17 +755,16 @@ function template(templateSpec, env) {
     },
 
     programs: [],
-    program: function(i, data) {
+    program: function(i, data, depths) {
       var programWrapper = this.programs[i],
           fn = this.fn(i);
-      if(data) {
-        programWrapper = program(this, i, fn, data);
+      if (data || depths) {
+        programWrapper = program(this, i, fn, data, depths);
       } else if (!programWrapper) {
         programWrapper = this.programs[i] = program(this, i, fn);
       }
       return programWrapper;
     },
-    programWithDepth: env.VM.programWithDepth,
 
     data: function(data, depth) {
       while (data && depth--) {
@@ -698,16 +788,20 @@ function template(templateSpec, env) {
 
   var ret = function(context, options) {
     options = options || {};
-    var helpers,
-        partials,
-        data = options.data;
+    var data = options.data;
 
     ret._setup(options);
     if (!options.partial && templateSpec.useData) {
       data = initData(context, data);
     }
-    return templateSpec.main.call(container, context, container.helpers, container.partials, data);
+    var depths;
+    if (templateSpec.useDepths) {
+      depths = options.depths ? [context].concat(options.depths) : [context];
+    }
+
+    return templateSpec.main.call(container, context, container.helpers, container.partials, data, depths);
   };
+  ret.isTop = true;
 
   ret._setup = function(options) {
     if (!options.partial) {
@@ -722,41 +816,29 @@ function template(templateSpec, env) {
     }
   };
 
-  ret._child = function(i) {
-    return container.programWithDepth(i);
+  ret._child = function(i, data, depths) {
+    if (templateSpec.useDepths && !depths) {
+      throw new Exception('must pass parent depths');
+    }
+
+    return program(container, i, templateSpec[i], data, depths);
   };
   return ret;
 }
 
-exports.template = template;function programWithDepth(i, data /*, $depth */) {
-  /*jshint -W040 */
-  var args = Array.prototype.slice.call(arguments, 2),
-      container = this,
-      fn = container.fn(i);
-
+exports.template = template;function program(container, i, fn, data, depths) {
   var prog = function(context, options) {
     options = options || {};
 
-    return fn.apply(container, [context, container.helpers, container.partials, options.data || data].concat(args));
+    return fn.call(container, context, container.helpers, container.partials, options.data || data, depths && [context].concat(depths));
   };
   prog.program = i;
-  prog.depth = args.length;
+  prog.depth = depths ? depths.length : 0;
   return prog;
 }
 
-exports.programWithDepth = programWithDepth;function program(container, i, fn, data) {
-  var prog = function(context, options) {
-    options = options || {};
-
-    return fn.call(container, context, container.helpers, container.partials, options.data || data);
-  };
-  prog.program = i;
-  prog.depth = 0;
-  return prog;
-}
-
-exports.program = program;function invokePartial(partial, name, context, helpers, partials, data) {
-  var options = { partial: true, helpers: helpers, partials: partials, data: data };
+exports.program = program;function invokePartial(partial, name, context, helpers, partials, data, depths) {
+  var options = { partial: true, helpers: helpers, partials: partials, data: data, depths: depths };
 
   if(partial === undefined) {
     throw new Exception("The partial " + name + " could not be found");
@@ -804,7 +886,7 @@ var badChars = /[&<>"'`]/g;
 var possible = /[&<>"'`]/;
 
 function escapeChar(chr) {
-  return escape[chr] || "&amp;";
+  return escape[chr];
 }
 
 function extend(obj /* , ...source */) {
@@ -827,6 +909,7 @@ var isFunction = function(value) {
   return typeof value === 'function';
 };
 // fallback for older versions of Chrome and Safari
+/* istanbul ignore next */
 if (isFunction(/x/)) {
   isFunction = function(value) {
     return typeof value === 'function' && toString.call(value) === '[object Function]';
@@ -834,6 +917,7 @@ if (isFunction(/x/)) {
 }
 var isFunction;
 exports.isFunction = isFunction;
+/* istanbul ignore next */
 var isArray = Array.isArray || function(value) {
   return (value && typeof value === 'object') ? toString.call(value) === '[object Array]' : false;
 };
@@ -843,8 +927,10 @@ function escapeExpression(string) {
   // don't escape SafeStrings, since they're already safe
   if (string instanceof SafeString) {
     return string.toString();
-  } else if (!string && string !== 0) {
+  } else if (string == null) {
     return "";
+  } else if (!string) {
+    return string + '';
   }
 
   // Force a string conversion as this will be done by the append regardless and

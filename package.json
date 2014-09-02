@@ -15,7 +15,7 @@
   "license": "ISC",
   "dependencies": {
     "browserify": "^5.10.1",
-    "handlebars": "^2.0.0-alpha.4",
+    "handlebars": "^2.0.0-beta.1",
     "hbsfy": "^2.1.0"
   }
 }
