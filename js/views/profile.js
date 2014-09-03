@@ -19,7 +19,6 @@ module.exports = Backbone.View.extend({
 		return --this.tweetCount;
 	},
 	tweetehed: function(evt) {
-		console.log('adding new tweet model');
 		_this = this.model;
 		var newTweetModel = new TweetModel({
 			text: this.$("input#tweetMsg").val(),

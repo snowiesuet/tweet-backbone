@@ -26,37 +26,39 @@ body {
 /* line 20, ../sass/default.scss */
 #tweetView .tweet-item:nth-child(1) {
   border-radius: 5px 5px 0 0;
+  border-bottom: 1px solid white;
 }
-/* line 24, ../sass/default.scss */
+/* line 25, ../sass/default.scss */
 #tweetView .tweet-item:nth-last-child(1) {
   border-radius: 0 0 5px 5px;
+  border-bottom: 1px solid #e1e8ed;
 }
-/* line 34, ../sass/default.scss */
+/* line 36, ../sass/default.scss */
 #tweetView .tweet-item .screen-name {
   color: #8899a6;
   font-size: 13px;
 }
-/* line 39, ../sass/default.scss */
+/* line 41, ../sass/default.scss */
 #tweetView .tweet-item .retweet-name {
   color: #8899a6;
   font-size: 12px;
 }
-/* line 44, ../sass/default.scss */
+/* line 46, ../sass/default.scss */
 #tweetView .tweet-item a.retweet-name {
   text-decoration: none;
 }
-/* line 48, ../sass/default.scss */
+/* line 50, ../sass/default.scss */
 #tweetView .tweet-item .user-url {
   color: #292f33;
   font-weight: bold;
   font-size: 14px;
   text-decoration: none;
 }
-/* line 53, ../sass/default.scss */
+/* line 55, ../sass/default.scss */
 #tweetView .tweet-item .user-url:hover {
   text-decoration: underline;
 }
-/* line 57, ../sass/default.scss */
+/* line 59, ../sass/default.scss */
 #tweetView .tweet-item .thumb-nail {
   width: 24px;
   height: 24px;
@@ -65,29 +67,29 @@ body {
   border-radius: 4px;
   vertical-align: middle;
 }
-/* line 66, ../sass/default.scss */
+/* line 68, ../sass/default.scss */
 #tweetView .tweet-item .count {
   color: #ccd6dd;
   font-size: 16px;
   vertical-align: middle;
 }
-/* line 72, ../sass/default.scss */
+/* line 74, ../sass/default.scss */
 #tweetView .tweet-item .tweet-img {
   margin: 5px 0;
 }
-/* line 74, ../sass/default.scss */
+/* line 76, ../sass/default.scss */
 #tweetView .tweet-item .tweet-img img {
   max-width: 100%;
   height: 295.375px;
 }
 
-/* line 83, ../sass/default.scss */
+/* line 85, ../sass/default.scss */
 #profileView {
   display: inline-block;
   width: 25%;
   float: left;
 }
-/* line 88, ../sass/default.scss */
+/* line 90, ../sass/default.scss */
 #profileView .profile-avatar img.profile-img {
   border: 5px solid #fff;
   border-radius: 12px;
@@ -95,17 +97,17 @@ body {
   width: 200px;
   height: 200px;
 }
-/* line 96, ../sass/default.scss */
+/* line 98, ../sass/default.scss */
 #profileView .profile-name {
   font-weight: bold;
   font-size: 22px;
 }
-/* line 100, ../sass/default.scss */
+/* line 102, ../sass/default.scss */
 #profileView .profile-screen-name {
   color: #8899a6;
   font-size: 14px;
 }
-/* line 105, ../sass/default.scss */
+/* line 107, ../sass/default.scss */
 #profileView .tweetBox {
   background-color: #E5F2F7;
   border-radius: 5px;
@@ -113,7 +115,7 @@ body {
   padding: 15px;
   margin-top: 30px;
 }
-/* line 112, ../sass/default.scss */
+/* line 114, ../sass/default.scss */
 #profileView .tweetBox .inputForm {
   font-size: 14px;
   width: 100%;
@@ -121,12 +123,12 @@ body {
   border: solid 1px #99CDE1;
   padding: 0 10px;
 }
-/* line 120, ../sass/default.scss */
+/* line 122, ../sass/default.scss */
 #profileView .tweetBox .inputForm::-webkit-input-placeholder {
   color: #8899A6;
   font-size: 14px;
 }
-/* line 127, ../sass/default.scss */
+/* line 129, ../sass/default.scss */
 #profileView .tweetBox .tweetBtn {
   background-color: #0084b4;
   border: 1px solid transparent;
@@ -137,7 +139,7 @@ body {
   text-align: center;
 }
 
-/* line 141, ../sass/default.scss */
+/* line 143, ../sass/default.scss */
 .sprite {
   background-image: url(https://si0.twimg.com/images/dev/cms/intents/icons/sprites/everything-spritev2.png);
   width: 16px;
@@ -145,24 +147,24 @@ body {
   display: inline-block;
   vertical-align: middle;
 }
-/* line 147, ../sass/default.scss */
+/* line 149, ../sass/default.scss */
 .sprite.retweeted {
   background-position: 16px 0;
 }
-/* line 150, ../sass/default.scss */
+/* line 152, ../sass/default.scss */
 .sprite.favorite {
   background-position: 64px 0;
 }
-/* line 153, ../sass/default.scss */
+/* line 155, ../sass/default.scss */
 .sprite.unfavorite {
   background-position: 96px 0;
 }
-/* line 156, ../sass/default.scss */
+/* line 158, ../sass/default.scss */
 .sprite.retweet {
   background-position: 47px 0;
 }
 
-/* line 161, ../sass/default.scss */
+/* line 163, ../sass/default.scss */
 .clearfix:after {
   content: ".";
   display: block;
@@ -172,26 +174,26 @@ body {
   height: 0;
 }
 
-/* line 170, ../sass/default.scss */
+/* line 172, ../sass/default.scss */
 .clearfix {
   display: inline-block;
 }
 
-/* line 174, ../sass/default.scss */
+/* line 176, ../sass/default.scss */
 html[xmlns] .clearfix {
   display: block;
 }
 
-/* line 178, ../sass/default.scss */
+/* line 180, ../sass/default.scss */
 * html .clearfix {
   height: 1%;
 }
 
-/* line 182, ../sass/default.scss */
+/* line 184, ../sass/default.scss */
 #profileCanopy {
   display: inline-block;
 }
-/* line 184, ../sass/default.scss */
+/* line 186, ../sass/default.scss */
 #profileCanopy li {
   list-style: none;
   display: inline-block;
@@ -199,14 +201,14 @@ html[xmlns] .clearfix {
   padding: 0 15px;
   text-align: center;
 }
-/* line 192, ../sass/default.scss */
+/* line 194, ../sass/default.scss */
 #profileCanopy .profileNav-lb {
   color: #66757f;
   font-size: 11px;
   letter-spacing: .02em;
   text-transform: uppercase;
 }
-/* line 198, ../sass/default.scss */
+/* line 200, ../sass/default.scss */
 #profileCanopy .profileNav-value {
   color: #0084B4;
   letter-spacing: 0.1em;

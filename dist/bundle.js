@@ -215,7 +215,6 @@ exports.Model = Backbone.Model.extend({
 exports.Collection = Backbone.Collection.extend({
   model : exports.Model,
   comparator: function(m1, m2){
-  	console.log('comparing');
   	return new Date(m2.get('created_at')).getTime() - new Date(m1.get('created_at')).getTime();
   }
 });
@@ -262,7 +261,6 @@ module.exports = Backbone.View.extend({
 		return --this.tweetCount;
 	},
 	tweetehed: function(evt) {
-		console.log('adding new tweet model');
 		_this = this.model;
 		var newTweetModel = new TweetModel({
 			text: this.$("input#tweetMsg").val(),
